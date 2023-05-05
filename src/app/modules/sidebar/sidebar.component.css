@@ -1,0 +1,33 @@
+.outer-div {
+  max-width: 334px;
+  height: 1000px;
+  background-color: #050505;
+  padding: 40px 32px 16px 32px;
+  /* float: left; */
+  margin-left: 10px;
+  z-index: 10;
+  position: relative;
+}
+.logo1 {
+  margin-right: 16px;
+  margin-top: -10px;
+}
+a {
+  color: #828282;
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.active-li {
+  color: #52d627;
+}
+.inner-div {
+  margin-top: 30px;
+}
+.inner-div h5 {
+  color: #b1abab;
+}
+.side-data {
+  margin-top: 20px;
+}

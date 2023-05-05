@@ -1,0 +1,154 @@
+<div class="main-div">
+  <div><app-sidebar></app-sidebar></div>
+  <div>
+    <nav class="nav1">
+      <h1>BULK SMS</h1>
+    </nav>
+    <div class="dashboard">
+      <div>
+        <h5>
+          Showing Statistics for Tue 02 May, 2023. from 00:00:00 to 17:09:00
+        </h5>
+      </div>
+
+      <div class="">
+        <div class="row gx-3">
+          <div class="col-3">
+            <div class="bg-secondary cards">
+              <div class="zmw text-center">
+                <i class="bi bi-envelope text-secondary"></i>
+              </div>
+              <div class="description">
+                <h5>0</h5>
+                <p>Total Sent Messages</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="bg-danger cards">
+              <div class="zmw text-center">
+                <i class="bi bi-envelope-exclamation text-danger"></i>
+              </div>
+              <div class="description">
+                <h5>0</h5>
+                <p>Total Failed Messages</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="bg-success cards">
+              <div class="zmw text-center">
+                <i class="bi bi-envelope-check text-success"></i>
+              </div>
+              <div class="description">
+                <h5>0</h5>
+                <p>Total Success Messages</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="bg-primary cards">
+              <div class="zmw text-center text-primary"><h6>ZMW</h6></div>
+              <div class="description">
+                <h5>0</h5>
+                <p>Total Used</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner-div2">
+        <h4>Overall Statistics</h4>
+        <div class="">
+          <div class="charts">
+            <div class="pie" [chart]="pieChart"></div>
+
+            <div class="line" [chart]="lineChart"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner-div3">
+        <app-table></app-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <form class="row row-cols-sm-auto">
+    <div class="col-12">
+      <div class="dp-hidden position-absolute">
+        <div class="input-group">
+          <input
+            name="datepicker"
+            class="form-control"
+            ngbDatepicker
+            #datepicker="ngbDatepicker"
+            [autoClose]="'outside'"
+            (dateSelect)="onDateSelection($event)"
+            [displayMonths]="2"
+            [dayTemplate]="t"
+            outsideDays="hidden"
+            [startDate]="fromDate!"
+            tabindex="-1"
+          />
+          <ng-template #t let-date let-focused="focused">
+            <span
+              class="custom-day"
+              [class.focused]="focused"
+              [class.range]="isRange(date)"
+              [class.faded]="isHovered(date) || isInside(date)"
+              (mouseenter)="hoveredDate = date"
+              (mouseleave)="hoveredDate = null"
+            >
+              {{ date.day }}
+            </span>
+          </ng-template>
+        </div>
+      </div>
+      <div class="input-group">
+        <input
+          #dpFromDate
+          class="form-control"
+          placeholder="yyyy-mm-dd"
+          name="dpFromDate"
+          [value]="formatter.format(fromDate)"
+          (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+        />
+        <button
+          class="btn btn-outline-secondary bi bi-calendar3"
+          (click)="datepicker.toggle()"
+          type="button"
+        >
+          2
+        </button>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="input-group">
+        <input
+          #dpToDate
+          class="form-control"
+          placeholder="yyyy-mm-dd"
+          name="dpToDate"
+          [value]="formatter.format(toDate)"
+          (input)="toDate = validateInput(toDate, dpToDate.value)"
+        />
+        <button
+          class="btn btn-outline-secondary bi bi-calendar3"
+          (click)="datepicker.toggle()"
+          type="button"
+        >
+          1
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <hr />
+  <pre>From date model: {{ fromDate | json }}</pre>
+  <pre>To date model: {{ toDate | json }}</pre>
+</div>

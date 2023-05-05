@@ -1,0 +1,20 @@
+/* .table-div {
+  background-color: aqua;
+  position: relative;
+  height: 500px;
+  width: 800px;
+}
+.table-div1 {
+  position: absolute;
+  top: 50px;
+  left: 300px;
+  height: 100%;
+  width: 100%;
+}
+.table-d {
+  border: 1px solid black;
+} */
+.table-div1 {
+  border: 1px solid gray;
+  margin-top: 50px;
+}

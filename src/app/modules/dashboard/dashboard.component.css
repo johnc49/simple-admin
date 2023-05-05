@@ -1,0 +1,95 @@
+.main-div {
+  display: flex;
+}
+.nav1 {
+  background-color: #52d627;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+}
+.nav1 h1 {
+  align-self: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.dashboard {
+  margin-left: 30px;
+  margin-top: 40px;
+  /* background-color: blue; */
+}
+.zmw {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* color: rgb(194, 31, 31); */
+  background-color: rgb(244, 248, 248);
+  margin-left: 10px;
+}
+.zmw h6 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 13px;
+}
+i {
+  font-size: 1.5rem;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-radius: 5px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+.charts {
+  display: flex;
+  margin: 20px;
+}
+
+.pie {
+  box-shadow: 10px 10px 5px #aaaaaa;
+  width: 400px;
+  height: 300px;
+
+  margin-right: 20px;
+}
+
+.line {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.inner-div2 {
+  margin-top: 30px;
+}
+
+.dp-hidden {
+  width: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range,
+.custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
